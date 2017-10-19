@@ -6,10 +6,20 @@ ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: fridgeBody
+    100004: fridgeDoor
     400000: //RootNode
+    400002: fridgeBody
+    400004: fridgeDoor
     2300000: //RootNode
+    2300002: fridgeBody
+    2300004: fridgeDoor
     3300000: //RootNode
+    3300002: fridgeBody
+    3300004: fridgeDoor
     4300000: fridge
+    4300002: fridgeBody
+    4300004: fridgeDoor
   materials:
     importMaterials: 0
     materialName: 0
