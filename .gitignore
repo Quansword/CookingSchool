@@ -40,3 +40,6 @@ CookingSchool/Library/ShaderCache/
 CookingSchool/Library/ScriptAssemblies/
 *.meta
 CookingSchool/Library/UnityAssemblies/
+CookingSchool/Temp/
+CookingSchool/ProjectSettings/ProjectVersion.txt
+CookingSchool/ProjectSettings/ProjectVersion.txt
