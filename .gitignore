@@ -33,6 +33,7 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
-/Library/metadata*
 CookingSchool/Library/CurrentLayout.dwlt
 *.log
+CookingSchool/Library/metadata/
+CookingSchool/Library/ShaderCache/
