@@ -6,10 +6,24 @@ ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: sink
+    100004: sinkHandleL
+    100006: sinkHandleR
     400000: //RootNode
+    400002: sink
+    400004: sinkHandleL
+    400006: sinkHandleR
     2300000: //RootNode
+    2300002: sink
+    2300004: sinkHandleL
+    2300006: sinkHandleR
     3300000: //RootNode
+    3300002: sink
+    3300004: sinkHandleL
+    3300006: sinkHandleR
     4300000: sink
+    4300002: sinkHandleL
+    4300004: sinkHandleR
   materials:
     importMaterials: 0
     materialName: 0
