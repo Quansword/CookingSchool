@@ -6,10 +6,39 @@ ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: range
+    100004: rangeKnob1
+    100006: rangeKnob2
+    100008: rangeKnob4
+    100010: rangeKnob5
+    100012: rangeKnob3
     400000: //RootNode
+    400002: range
+    400004: rangeKnob1
+    400006: rangeKnob2
+    400008: rangeKnob4
+    400010: rangeKnob5
+    400012: rangeKnob3
     2300000: //RootNode
+    2300002: range
+    2300004: rangeKnob1
+    2300006: rangeKnob2
+    2300008: rangeKnob4
+    2300010: rangeKnob5
+    2300012: rangeKnob3
     3300000: //RootNode
+    3300002: range
+    3300004: rangeKnob1
+    3300006: rangeKnob2
+    3300008: rangeKnob4
+    3300010: rangeKnob5
+    3300012: rangeKnob3
     4300000: range
+    4300002: rangeKnob1
+    4300004: rangeKnob2
+    4300006: rangeKnob4
+    4300008: rangeKnob5
+    4300010: rangeKnob3
   materials:
     importMaterials: 0
     materialName: 0
