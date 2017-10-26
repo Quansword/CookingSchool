@@ -5,6 +5,7 @@ using UnityEngine;
 public class cameraMovement : MonoBehaviour {
 
     // Use this for initialization
+    private IEnumerator moveCoroutine;
     private Vector3[] cameraPositions = new Vector3[8];
 	void Start () {
         cameraPositions[0] = new Vector3(-7.5f, 1.65f, 6.75f);
@@ -19,17 +20,25 @@ public class cameraMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-       
-            smoothMove(4);
-            Debug.Log("key pressed");
+
+        if (Input.anyKeyDown)
+        {
+            moveCoroutine = smoothMove(3);
+            StartCoroutine(moveCoroutine);
+            Debug.Log("Pressed a key");
+        }
         
     }
 
-    void smoothMove(int index)
+    IEnumerator smoothMove(int index)
     {
-        
+        float startTime = Time.time;
         Debug.Log("Moving to position " + index);
-        this.transform.position = Vector3.Lerp(transform.position, cameraPositions[index], 1.4f*Time.deltaTime);
-
+        while (Time.time < startTime + 2f)
+        {
+            transform.position = Vector3.Lerp(transform.position, cameraPositions[index], 1.4f * Time.deltaTime);
+            yield return null;
+        }
+        transform.position = cameraPositions[index];
     }
 }
