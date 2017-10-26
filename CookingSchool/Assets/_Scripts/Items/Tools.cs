@@ -6,7 +6,7 @@ public class Tools : Items
 {
 	public bool inUse;
 
-	public List<Ingredients> itemList = new List<Ingredients>();
+	public Ingredients heldItem;
 
 	public Tools()
 	{
