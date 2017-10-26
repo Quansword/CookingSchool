@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Items
+public class Items : MonoBehaviour
 {
 	public enum Type
 	{
