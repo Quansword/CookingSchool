@@ -6,15 +6,38 @@ public class cameraMovement : MonoBehaviour {
 
     // Use this for initialization
     private IEnumerator moveCoroutine;
+
     private Vector3[] cameraPositions = new Vector3[8];
-	void Start () {
+    private Quaternion[] cameraRotations = new Quaternion[8];
+
+
+    public enum Location
+    {
+        Kitchen = 0,
+        Fridge = 1,
+        Inventory = 2,
+        Sink = 3,
+        Cutting = 4,
+        Prep = 5,
+        Stove = 6,
+        Plating = 7
+    };
+
+    public int camLocation;
+
+    void Start () {
         cameraPositions[0] = new Vector3(-7.5f, 1.65f, 6.75f);
-        cameraPositions[1] = new Vector3(-5.51f, 1.65f, 1.72f);
+        cameraRotations[0] = new Quaternion(0, 180, 0, 0);
+        cameraPositions[1] = new Vector3(-4.46f, 1.72f, 1.84f);
+        cameraRotations[1] = new Quaternion(0, 180, -17.693f, 1);
+        cameraPositions[2] = new Vector3(-5.5f, 1.82f, 1.84f);
+        cameraRotations[2] = new Quaternion(0, 180, -24.839f, 0);
         Vector3 temp = cameraPositions[1];
-        for (int i=2;i<8;i++)
+        for (int i=3;i<8;i++)
         {
-            temp.x -= 0.85f;
+            temp.x -= 1.0f;
             cameraPositions[i] = temp;
+            cameraRotations[i] = cameraRotations[2];
         }
     }
 	
@@ -54,6 +77,7 @@ public class cameraMovement : MonoBehaviour {
             }
             moveCoroutine = smoothMove(posIndex);
             StartCoroutine(moveCoroutine);
+            transform.rotation = cameraRotations[posIndex];
             Debug.Log("Pressed a key");
         }
         
@@ -68,6 +92,6 @@ public class cameraMovement : MonoBehaviour {
             transform.position = Vector3.Lerp(transform.position, cameraPositions[index], 1.0f * Time.deltaTime);
             yield return null;
         }
-        
+        transform.position = cameraPositions[index];
     }
 }
