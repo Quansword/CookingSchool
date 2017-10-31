@@ -8,7 +8,6 @@ public class cameraMovement : MonoBehaviour {
     private IEnumerator moveCoroutine;
 
     private Vector3[] cameraPositions = new Vector3[8];
-	void Start () {
     private Quaternion[] cameraRotations = new Quaternion[8];
 
 
