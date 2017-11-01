@@ -26,6 +26,7 @@ public class cameraMovement : MonoBehaviour {
     public int camLocation;
 
     void Start () {
+        Debug.Log("Main camera started");
         cameraPositions[0] = new Vector3(-7.5f, 1.65f, 6.75f);
         cameraRotations[0] = new Quaternion(0, 180, 0, 0);
         cameraPositions[1] = new Vector3(-4.46f, 1.72f, 1.84f);
@@ -109,7 +110,7 @@ public class cameraMovement : MonoBehaviour {
         Debug.Log("Moving to position " + index);
         while (Time.time < startTime + 2f)
         {
-            transform.position = Vector3.Lerp(transform.position, cameraPositions[index], 2.0f * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, cameraPositions[index], 4.0f * Time.deltaTime);
             yield return null;
         }
         transform.position = cameraPositions[index];
