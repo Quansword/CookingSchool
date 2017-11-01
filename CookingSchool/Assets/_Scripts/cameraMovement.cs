@@ -9,7 +9,7 @@ public class cameraMovement : MonoBehaviour {
 
     private Vector3[] cameraPositions = new Vector3[8];
     private Quaternion[] cameraRotations = new Quaternion[8];
-
+    public GameObject fridgeDoor;
 
     public enum Location
     {
@@ -27,11 +27,11 @@ public class cameraMovement : MonoBehaviour {
 
     void Start () {
         Debug.Log("Main camera started");
-        cameraPositions[0] = new Vector3(-7.5f, 1.65f, 6.75f);
+        cameraPositions[0] = new Vector3(-7.5f, 1.65f, 5.3f);
         cameraRotations[0] = new Quaternion(0, 180, 0, 0);
         cameraPositions[1] = new Vector3(-4.46f, 1.72f, 1.84f);
         cameraRotations[1] = new Quaternion(0, 180, -17.693f, 1);
-        cameraPositions[2] = new Vector3(-5.5f, 1.82f, 1.84f);
+        cameraPositions[2] = new Vector3(-5.5f, 1.57f, 1.84f);
         cameraRotations[2] = new Quaternion(0, 180, -24.839f, 0);
         Vector3 temp = cameraPositions[2];
         for (int i=3;i<8;i++)
@@ -110,7 +110,7 @@ public class cameraMovement : MonoBehaviour {
         Debug.Log("Moving to position " + index);
         while (Time.time < startTime + 2f)
         {
-            transform.position = Vector3.Lerp(transform.position, cameraPositions[index], 4.0f * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, cameraPositions[index], 1.0f);
             yield return null;
         }
         transform.position = cameraPositions[index];

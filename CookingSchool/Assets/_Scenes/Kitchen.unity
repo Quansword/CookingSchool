@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.414
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.28906164, g: 0.3229516, b: 0.37832475, a: 0.414}
+  m_IndirectSpecularColor: {r: 0.2890614, g: 0.32295075, b: 0.3783241, a: 0.414}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -706,6 +706,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4972979652473950, guid: 52f1ac1469d56aa41aa5fc698813223e,
     type: 2}
   m_PrefabInternal: {fileID: 478336691}
+--- !u!1 &532850123 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1441704244980564, guid: f83dd15c5b3d2ff4dba5dabc12ce3257,
+    type: 2}
+  m_PrefabInternal: {fileID: 1302601718}
 --- !u!1001 &541363636
 Prefab:
   m_ObjectHideFlags: 0
@@ -926,7 +931,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 666451148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 294.9625, y: 218.0288, z: 4.171532}
+  m_LocalPosition: {x: 483.9625, y: 270.52878, z: 4.171532}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1377933059}
@@ -1854,7 +1859,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1377933058}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 115, z: 0}
+  m_LocalPosition: {x: 0, y: 167.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 666451149}
@@ -2351,7 +2356,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1773896907}
   m_LocalRotation: {x: 0, y: 1, z: -0, w: -0.0000001872535}
-  m_LocalPosition: {x: -7.54, y: 1.86, z: 6.87}
+  m_LocalPosition: {x: -7.54, y: 1.86, z: 5.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2368,6 +2373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6289566f87c44845bd9d3eb81110d49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fridgeDoor: {fileID: 532850123}
+  camLocation: 0
 --- !u!115 &1792194019
 MonoScript:
   m_ObjectHideFlags: 0
