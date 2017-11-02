@@ -83,6 +83,10 @@ public class GameManager : MonoBehaviour
 						{
 							item.transform.rotation = Quaternion.Euler(-1.05f, 128.67f, 86.058f);
 						}
+						else if (item.name == "butter knife")
+						{
+							item.transform.rotation = Quaternion.Euler(85, 345, 275);
+						}
 
                         item.interactable = true;
                         item.gameObject.GetComponent<Collider>().enabled = false;
@@ -262,6 +266,10 @@ public class GameManager : MonoBehaviour
 				{
 					item.transform.rotation = Quaternion.Euler(0, 0, 0);
 				}
+				else if (item.name == "butter knife")
+				{
+					item.transform.rotation = Quaternion.Euler(0, 90, 0);
+				}
 			}
         }
         invY = -0.2f;
@@ -301,13 +309,15 @@ public class GameManager : MonoBehaviour
         {
             if(Time.realtimeSinceStartup >= endTime)
             {
-                Destroy(hitContainer.gameObject.transform.GetChild(3).gameObject);
-                Items scrambledEggs = Instantiate(cookedStatus[cookedIndex], hitContainer.transform.position, hitContainer.transform.rotation, hitContainer.gameObject.transform);
-                scrambledEggs.itemLocation = (Items.Location)camScript.camLocation;
-                newPos = scrambledEggs.transform.localPosition;
-                newPos.y += 0.03f;
-                scrambledEggs.transform.localPosition = newPos;
- 
+				if (cookedIndex != 3)
+				{
+					Destroy(hitContainer.gameObject.transform.GetChild(3).gameObject);
+					Items scrambledEggs = Instantiate(cookedStatus[cookedIndex], hitContainer.transform.position, hitContainer.transform.rotation, hitContainer.gameObject.transform);
+					scrambledEggs.itemLocation = (Items.Location)camScript.camLocation;
+					newPos = scrambledEggs.transform.localPosition;
+					newPos.y += 0.03f;
+					scrambledEggs.transform.localPosition = newPos;
+				}
 
                 if(cookedIndex < 3)
                 {

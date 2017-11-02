@@ -30,30 +30,4 @@ public class Items : MonoBehaviour
 	public bool interactable;
 	public bool movable;
 	public bool inUse;
-
-	public Items()
-	{
-		itemType = Type.Ingredients;
-		itemLocation = Location.Fridge;
-		clean = false;
-		held = false;
-		interactable = false;
-		movable = false;
-		inUse = false;
-		Debug.Log("Default Items Constructor Called");
-	}
-
-	//This is the constructor for the Items class
-	//and is not inherited by any derived classes.
-	public Items(Type iType, Location iLocation)
-	{
-		itemType = iType;
-		itemLocation = iLocation;
-		clean = false;
-		held = false;
-		interactable = false;
-		movable = false;
-		inUse = false;
-		Debug.Log("Items Constructor Called");
-	}
 }
