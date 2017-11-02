@@ -107,17 +107,23 @@ public class cameraMovement : MonoBehaviour {
     }
     public void nextArea()
     {
-        camLocation++;
-        moveCoroutine = smoothMove(camLocation);
-        StartCoroutine(moveCoroutine);
-        transform.rotation = cameraRotations[camLocation];
+        if (camLocation < 7)
+        {
+            camLocation++;
+            moveCoroutine = smoothMove(camLocation);
+            StartCoroutine(moveCoroutine);
+            transform.rotation = cameraRotations[camLocation];
+        }
     }
     public void prevArea()
     {
-        camLocation--;
-        moveCoroutine = smoothMove(camLocation);
-        StartCoroutine(moveCoroutine);
-        transform.rotation = cameraRotations[camLocation];
+        if (camLocation > 1)
+        {
+            camLocation--;
+            moveCoroutine = smoothMove(camLocation);
+            StartCoroutine(moveCoroutine);
+            transform.rotation = cameraRotations[camLocation];
+        }
     }
 
     IEnumerator smoothMove(int index)
