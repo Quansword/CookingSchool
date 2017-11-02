@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/TitleScreen.unity
+    guid: 3115b57d6925f40498e0dd141a43c330
+  - enabled: 1
+    path: Assets/_Scenes/Kitchen.unity
+    guid: 33732cb377a2925469bf6169903ee8f6
