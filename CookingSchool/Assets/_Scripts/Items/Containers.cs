@@ -6,6 +6,9 @@ public class Containers : Items
 {
 	public bool inUse;
 	public bool mixed;
+	private int salt;
+	private int pepper;
+	private int milk;
 
 	public List<Ingredients> itemList = new List<Ingredients>();
 
@@ -13,6 +16,9 @@ public class Containers : Items
 	{
 		inUse = false;
 		mixed = false;
+		salt = 0;
+		pepper = 0;
+		milk = 0;
 		Debug.Log("Default Container Constructor Called");
 	}
 
@@ -22,6 +28,9 @@ public class Containers : Items
 		itemLocation = iLocation;
 		inUse = false;
 		mixed = false;
+		salt = 0;
+		pepper = 0;
+		milk = 0;
 		Debug.Log("Container Constructor Called");
 	}
 }
