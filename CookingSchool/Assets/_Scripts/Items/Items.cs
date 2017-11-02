@@ -29,6 +29,7 @@ public class Items : MonoBehaviour
 	public bool held;
 	public bool interactable;
 	public bool movable;
+	public bool inUse;
 
 	public Items()
 	{
@@ -38,6 +39,7 @@ public class Items : MonoBehaviour
 		held = false;
 		interactable = false;
 		movable = false;
+		inUse = false;
 		Debug.Log("Default Items Constructor Called");
 	}
 
@@ -51,6 +53,7 @@ public class Items : MonoBehaviour
 		held = false;
 		interactable = false;
 		movable = false;
+		inUse = false;
 		Debug.Log("Items Constructor Called");
 	}
 
