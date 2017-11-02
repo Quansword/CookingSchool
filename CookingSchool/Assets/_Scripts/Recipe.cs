@@ -11,6 +11,9 @@ public class Recipe : MonoBehaviour
     public Camera mainCamera;
     private cameraMovement cam;
     public Text screenText;
+    public GameObject panel;
+    public GameObject iText;
+
     private int index = 0;
 
     // Use this for initialization
@@ -30,19 +33,34 @@ public class Recipe : MonoBehaviour
         recipeText.Add("Stir gently until all the liquid is gone");
         recipeText.Add("Turn off the heat");
         recipeText.Add("Transfer eggs onto a plate");
-        
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(cam.camLocation == 0)
         {
-            screenText.text = recipeText[++index];
-            if (index > 11) { index = 0; }
+            panel.SetActive(false);
+            iText.SetActive(false);
         }
-
+        else
+        {
+            panel.SetActive(true);
+            iText.SetActive(true);
+        }
+        if (index == 12)
+        {
+            index = 0;
+        }
+    }
+    public void nextStep()
+    {
+        screenText.text = recipeText[++index];
+    }
+    public void prevStep()
+    {
+        screenText.text = recipeText[--index];
     }
 }

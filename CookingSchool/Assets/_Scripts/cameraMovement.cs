@@ -81,19 +81,7 @@ public class cameraMovement : MonoBehaviour {
             transform.rotation = cameraRotations[camLocation];
             Debug.Log("Pressed a key in main screen");
         }
-        else if (Input.GetMouseButtonUp(0) && camLocation > 0 )
-        {
-            if (Input.mousePosition.x < Screen.width / 7)
-            {
-                camLocation--;
-            }
-            else if (Input.mousePosition.x < Screen.width && Input.mousePosition.x > Screen.width/7*6 && camLocation < 7)
-            {
-                camLocation++;
-            }
-            moveCoroutine = smoothMove(camLocation);
-            StartCoroutine(moveCoroutine);
-        }
+  
         else if (Input.GetKeyUp(KeyCode.Escape) && camLocation>0)
         {
             camLocation = 0;
@@ -116,6 +104,20 @@ public class cameraMovement : MonoBehaviour {
             }
         }
         
+    }
+    public void nextArea()
+    {
+        camLocation++;
+        moveCoroutine = smoothMove(camLocation);
+        StartCoroutine(moveCoroutine);
+        transform.rotation = cameraRotations[camLocation];
+    }
+    public void prevArea()
+    {
+        camLocation--;
+        moveCoroutine = smoothMove(camLocation);
+        StartCoroutine(moveCoroutine);
+        transform.rotation = cameraRotations[camLocation];
     }
 
     IEnumerator smoothMove(int index)
