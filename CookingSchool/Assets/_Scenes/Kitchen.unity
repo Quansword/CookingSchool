@@ -1325,8 +1325,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1773896911}
   screenText: {fileID: 1377933060}
-  panel: {fileID: 1444747650}
-  iText: {fileID: 2049166447}
+  objects:
+  - {fileID: 588715972}
+  - {fileID: 1021634433}
+  - {fileID: 804107910}
+  - {fileID: 1644061041}
+  - {fileID: 1444747650}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &700797860
 Prefab:
   m_ObjectHideFlags: 0

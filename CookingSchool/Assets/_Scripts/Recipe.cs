@@ -11,8 +11,7 @@ public class Recipe : MonoBehaviour
     public Camera mainCamera;
     private cameraMovement cam;
     public Text screenText;
-    public GameObject panel;
-    public GameObject iText;
+    public GameObject[] objects = new GameObject[10];
 
     private int index = 0;
 
@@ -42,13 +41,19 @@ public class Recipe : MonoBehaviour
     {
         if(cam.camLocation == 0)
         {
-            panel.SetActive(false);
-            iText.SetActive(false);
+            for (int i = 0; i < 5; i++)
+            {
+                objects[i].SetActive(false);
+
+            }
         }
         else
         {
-            panel.SetActive(true);
-            iText.SetActive(true);
+            for (int i = 0; i < 5; i++)
+            {
+                objects[i].SetActive(true);
+
+            }
         }
         if (index == 12)
         {
