@@ -4,13 +4,10 @@ using System.Collections.Generic;
 
 public class Tools : Items
 {
-	public bool inUse;
-
 	public Ingredients heldItem;
 
 	public Tools()
 	{
-		inUse = false;
 		Debug.Log("Default Container Constructor Called");
 	}
 
@@ -18,7 +15,6 @@ public class Tools : Items
 	{
 		itemType = iType;
 		itemLocation = iLocation;
-		inUse = false;
 		Debug.Log("Container Constructor Called");
 	}
 }
