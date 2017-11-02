@@ -133,6 +133,6 @@ MonoBehaviour:
   clean: 1
   held: 0
   interactable: 0
-  movable: 0
+  movable: 1
   choppable: 0
   measurable: 1

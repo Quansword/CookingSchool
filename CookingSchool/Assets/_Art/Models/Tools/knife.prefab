@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 64828881955208520}
   m_Layer: 0
   m_Name: knife
-  m_TagString: Ingredient
+  m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,6 +132,6 @@ MonoBehaviour:
   clean: 1
   held: 0
   interactable: 0
-  movable: 0
+  movable: 1
   inUse: 0
   heldItem: {fileID: 0}

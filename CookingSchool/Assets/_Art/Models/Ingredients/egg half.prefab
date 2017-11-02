@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 4565023382777378}
   - component: {fileID: 95137375898269328}
   - component: {fileID: 114533435111832302}
-  - component: {fileID: 64913549202634876}
+  - component: {fileID: 136551580279106696}
   m_Layer: 0
   m_Name: egg half
   m_TagString: Ingredient
@@ -215,20 +215,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1321870223573064}
   m_Mesh: {fileID: 4300002, guid: cc76bc04030b21740abddd0e12d0d1d9, type: 3}
---- !u!64 &64913549202634876
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1842610544723352}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
 --- !u!95 &95137375898269328
 Animator:
   serializedVersion: 3
@@ -262,7 +248,20 @@ MonoBehaviour:
   clean: 1
   held: 0
   interactable: 0
-  movable: 0
+  movable: 1
   choppable: 0
   measurable: 0
   howCracked: 0
+--- !u!136 &136551580279106696
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1842610544723352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.1
+  m_Height: 0.22
+  m_Direction: 1
+  m_Center: {x: 2.544842e-10, y: 0.02480225, z: 1.878218e-10}
