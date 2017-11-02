@@ -9,47 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1837673130293970}
+  m_RootGameObject: {fileID: 1806498437557968}
   m_IsPrefabParent: 1
---- !u!1 &1837673130293970
+--- !u!1 &1806498437557968
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4873584169012116}
-  - component: {fileID: 33263288247746426}
-  - component: {fileID: 23495190347388406}
-  - component: {fileID: 95273930972122838}
-  - component: {fileID: 64864427681072898}
-  - component: {fileID: 114046582981991352}
+  - component: {fileID: 4565600463752120}
+  - component: {fileID: 33301109471545862}
+  - component: {fileID: 23470988544034088}
+  - component: {fileID: 95298964725925680}
+  - component: {fileID: 114257592875657728}
   m_Layer: 0
   m_Name: undercooked srcambled eggs
-  m_TagString: Ingredient
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4873584169012116
+--- !u!4 &4565600463752120
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1837673130293970}
+  m_GameObject: {fileID: 1806498437557968}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.192, y: 0.92083955, z: 0.724}
+  m_LocalPosition: {x: -8.326, y: 0.92083955, z: 0.862}
   m_LocalScale: {x: 21.207386, y: 21.207386, z: 21.207386}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23495190347388406
+--- !u!23 &23470988544034088
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1837673130293970}
+  m_GameObject: {fileID: 1806498437557968}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,7 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b56570c2bc54df64085c5c73764c2baf, type: 2}
+  - {fileID: 2100000, guid: 89e9b72deb8c95f46ab4d42d9178a425, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,34 +77,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33263288247746426
+--- !u!33 &33301109471545862
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1837673130293970}
+  m_GameObject: {fileID: 1806498437557968}
   m_Mesh: {fileID: 4300000, guid: 1a91acb8384eb46428ae9e5951c0dfd9, type: 3}
---- !u!64 &64864427681072898
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1837673130293970}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 1a91acb8384eb46428ae9e5951c0dfd9, type: 3}
---- !u!95 &95273930972122838
+--- !u!95 &95298964725925680
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1837673130293970}
+  m_GameObject: {fileID: 1806498437557968}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 1a91acb8384eb46428ae9e5951c0dfd9, type: 3}
   m_Controller: {fileID: 0}
@@ -116,12 +101,12 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114046582981991352
+--- !u!114 &114257592875657728
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1837673130293970}
+  m_GameObject: {fileID: 1806498437557968}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2c2692e38731fc4ca2c13fa5d4762ce, type: 3}

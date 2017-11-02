@@ -61,6 +61,10 @@ public class UIManager : MonoBehaviour
         {
             objects[5].SetActive(true);
         }
+        if(cam.camLocation != 6 && !flameOn)
+        {
+            objects[5].SetActive(false);
+        }
         if (index == 12)
         {
             index = 0;

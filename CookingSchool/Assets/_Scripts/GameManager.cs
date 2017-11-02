@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,11 +22,15 @@ public class GameManager : MonoBehaviour
 	private float zPos;
     private float invY;
     private bool isStoveOn;
+    private float startTime;
+    private float endTime;
+    private int cookedIndex;
+    private bool isCooking;
 
+
+    public GameObject panText;
 	public Items liquidEgg;
-	public Items undercooked;
-	public Items cooked;
-	public Items overcooked;
+    public Items[] cookedStatus = new Items[3];
 	public PanStuff butterSlice;
 
 	// Use this for initialization
@@ -33,8 +38,13 @@ public class GameManager : MonoBehaviour
 	{
 		holding = false;
         isStoveOn = false;
+        isCooking = false;
+        startTime = 0;
+        endTime = 0;
+        cookedIndex = -1;
 		camScript = mainCamera.GetComponent<cameraMovement>();
         invY = camScript.cameraPositions[4].y+0.3f;
+        panText.SetActive(false);
 	}
 
 	// Update is called once per frame
@@ -46,7 +56,7 @@ public class GameManager : MonoBehaviour
 			RaycastHit hit;
 			if (Physics.Raycast(ray, out hit))
 			{
-				if (hit.collider.CompareTag("Container") || hit.collider.CompareTag("Ingredient") || hit.collider.CompareTag("Tool"))
+				if ((hit.collider.CompareTag("Container") || hit.collider.CompareTag("Ingredient") || hit.collider.CompareTag("Tool")) && (hit.collider.gameObject.name != "fry" || cookedIndex !=0))
 				{
 					if (hit.collider.gameObject.GetComponent<Items>() != item)
 					{
@@ -55,7 +65,7 @@ public class GameManager : MonoBehaviour
 
 						if (item.name == "fry")
 						{
-							zPos = mainCamera.transform.position.z - 0.8f;
+							zPos = mainCamera.transform.position.z - 0.7f;
 						}
 					}
 
@@ -74,8 +84,8 @@ public class GameManager : MonoBehaviour
 							item.transform.rotation = Quaternion.Euler(-1.05f, 128.67f, 86.058f);
 						}
 
-						item.interactable = true;
-						item.gameObject.GetComponent<Collider>().enabled = false;
+                        item.interactable = true;
+                        item.gameObject.GetComponent<Collider>().enabled = false;
                         if(item.itemLocation == Items.Location.Inventory)
                         {
                             item.itemLocation = (Items.Location)camScript.camLocation;
@@ -184,7 +194,23 @@ public class GameManager : MonoBehaviour
 						newPos = liquid.transform.localPosition;
 						newPos.y += 0.03f;
 						liquid.transform.localPosition = newPos;
+
+                        panText.SetActive(false);
+                        isCooking = true;
+                        startTime = Time.realtimeSinceStartup;
+                        endTime = startTime + 10;
+                        cookedIndex = 0;
 					}
+
+                    if (((Containers)item).name == "fry" && cookedIndex >= 0)
+                    {
+                        isCooking = false;
+                        Items food = Instantiate(cookedStatus[cookedIndex - 1], hitContainer.transform.position, hitContainer.transform.rotation, hitContainer.gameObject.transform);
+                        Destroy(item.gameObject.transform.GetChild(3).gameObject);
+                        
+                        food.itemLocation = (Items.Location)camScript.camLocation;
+                        food.transform.localScale = new Vector3(1f, 1f, 1f);
+                    }
 				}
 				else if (item.itemType == Items.Type.Tools && hit.collider.CompareTag("Ingredient"))
 				{
@@ -223,7 +249,12 @@ public class GameManager : MonoBehaviour
                 holding = false;
                 Debug.Log("Let go of whatever");
 
-				if (item.name == "whisk")
+                if (item.name == "fry")
+                {
+                    startTime = Time.realtimeSinceStartup;
+                    endTime = startTime + 10;
+                }
+				else if (item.name == "whisk")
 				{
 					item.transform.rotation = Quaternion.Euler(0, 0, -90f);
 				}
@@ -260,6 +291,39 @@ public class GameManager : MonoBehaviour
 				//Debug.Log(item.gameObject.transform.position.z);
 			}
 		}
+        if(Time.realtimeSinceStartup >= endTime && !isCooking && isStoveOn)
+        {
+            panText.SetActive(true);
+            endTime = 0;
+            startTime = 0;
+        }
+        if(isCooking)
+        {
+            if(Time.realtimeSinceStartup >= endTime)
+            {
+                Destroy(hitContainer.gameObject.transform.GetChild(3).gameObject);
+                Items scrambledEggs = Instantiate(cookedStatus[cookedIndex], hitContainer.transform.position, hitContainer.transform.rotation, hitContainer.gameObject.transform);
+                scrambledEggs.itemLocation = (Items.Location)camScript.camLocation;
+                newPos = scrambledEggs.transform.localPosition;
+                newPos.y += 0.03f;
+                scrambledEggs.transform.localPosition = newPos;
+ 
+
+                if(cookedIndex < 3)
+                {
+                    cookedIndex++;
+                    if(cookedIndex == 1)
+                    {
+                        endTime += 10;
+                    }
+                    else if(cookedIndex == 2)
+                    {
+                        endTime += 10;
+                    }
+                }
+               
+            }
+        }
 	}
     public void stoveOn()
     {

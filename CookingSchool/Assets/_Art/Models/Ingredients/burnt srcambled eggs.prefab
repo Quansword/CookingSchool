@@ -9,47 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1399537030669540}
+  m_RootGameObject: {fileID: 1830170268214748}
   m_IsPrefabParent: 1
---- !u!1 &1399537030669540
+--- !u!1 &1830170268214748
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4889043720685394}
-  - component: {fileID: 33901942847112158}
-  - component: {fileID: 23577273565422992}
-  - component: {fileID: 95819270266845714}
-  - component: {fileID: 64992578991453290}
-  - component: {fileID: 114564864413925706}
+  - component: {fileID: 4490541762476356}
+  - component: {fileID: 33611817999870372}
+  - component: {fileID: 23282469912880974}
+  - component: {fileID: 95987284723876444}
+  - component: {fileID: 114544390084536798}
   m_Layer: 0
   m_Name: burnt srcambled eggs
-  m_TagString: Ingredient
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4889043720685394
+--- !u!4 &4490541762476356
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1399537030669540}
+  m_GameObject: {fileID: 1830170268214748}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.176525, y: 0.92083955, z: 0.7075756}
+  m_LocalPosition: {x: -8.165325, y: 0.92083955, z: 0.8683192}
   m_LocalScale: {x: 21.207386, y: 21.207386, z: 21.207386}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23577273565422992
+--- !u!23 &23282469912880974
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1399537030669540}
+  m_GameObject: {fileID: 1830170268214748}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,7 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b56570c2bc54df64085c5c73764c2baf, type: 2}
+  - {fileID: 2100000, guid: d4f704702a2d3ed40b2134cd59189b04, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,34 +77,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33901942847112158
+--- !u!33 &33611817999870372
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1399537030669540}
+  m_GameObject: {fileID: 1830170268214748}
   m_Mesh: {fileID: 4300000, guid: 1a91acb8384eb46428ae9e5951c0dfd9, type: 3}
---- !u!64 &64992578991453290
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1399537030669540}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 1a91acb8384eb46428ae9e5951c0dfd9, type: 3}
---- !u!95 &95819270266845714
+--- !u!95 &95987284723876444
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1399537030669540}
+  m_GameObject: {fileID: 1830170268214748}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 1a91acb8384eb46428ae9e5951c0dfd9, type: 3}
   m_Controller: {fileID: 0}
@@ -116,12 +101,12 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114564864413925706
+--- !u!114 &114544390084536798
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1399537030669540}
+  m_GameObject: {fileID: 1830170268214748}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2c2692e38731fc4ca2c13fa5d4762ce, type: 3}
