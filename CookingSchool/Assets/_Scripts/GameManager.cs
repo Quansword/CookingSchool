@@ -105,8 +105,8 @@ public class GameManager : MonoBehaviour
 					Debug.Log(hitContainer.name);
 
 					hitContainer.salt += ((Containers)item).salt;
-					hitContainer.salt += ((Containers)item).pepper;
-					hitContainer.salt += ((Containers)item).milk;
+					hitContainer.pepper += ((Containers)item).pepper;
+					hitContainer.milk += ((Containers)item).milk;
 
 					((Containers)item).salt = 0;
 					((Containers)item).pepper = 0;
