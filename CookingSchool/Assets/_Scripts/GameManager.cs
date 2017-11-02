@@ -20,11 +20,13 @@ public class GameManager : MonoBehaviour
 	private Vector3 newPos;
 	private float zPos;
     private float invY;
+    private bool isStoveOn;
 
 	// Use this for initialization
 	void Start()
 	{
 		holding = false;
+        isStoveOn = false;
 		camScript = mainCamera.GetComponent<cameraMovement>();
         invY = camScript.cameraPositions[4].y+0.3f;
 	}
@@ -201,4 +203,12 @@ public class GameManager : MonoBehaviour
 			}
 		}
 	}
+    public void stoveOn()
+    {
+        isStoveOn = true;
+    }
+    public void stoveOff()
+    {
+        isStoveOn = false;
+    }
 }
