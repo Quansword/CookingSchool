@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.414
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2890614, g: 0.32295075, b: 0.3783241, a: 0.414}
+  m_IndirectSpecularColor: {r: 0.28906164, g: 0.3229516, b: 0.37832475, a: 0.414}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 196119409}
   - component: {fileID: 196119408}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -464,6 +464,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1773896911}
+  liquidEgg: {fileID: 114745457815103092, guid: 7a48497f11b82f2458046ad4d2609c3e,
+    type: 2}
+  undercooked: {fileID: 114046582981991352, guid: bc312a4d38f0f2543ab851ac4da66260,
+    type: 2}
+  cooked: {fileID: 114503031418105956, guid: f57f2d9ac9d8d074f966f0923f5b6add, type: 2}
+  overcooked: {fileID: 114564864413925706, guid: 5342e3350edb7b44db0919015ea8c752,
+    type: 2}
+  butterSlice: {fileID: 114621060456165238, guid: 517bafa04df112d40ad05730bb3e0289,
+    type: 2}
 --- !u!4 &196119409
 Transform:
   m_ObjectHideFlags: 0
@@ -1374,6 +1383,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 1334751311548712, guid: f239ef080fdfb564687bc43274fb5669, type: 2}
+      propertyPath: m_Name
+      value: whisk
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f239ef080fdfb564687bc43274fb5669, type: 2}
   m_IsPrefabParent: 0
@@ -1848,7 +1861,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 666451148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 483.9625, y: 270.52878, z: 4.171532}
+  m_LocalPosition: {x: 550.4625, y: 308.02878, z: 4.171532}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1377933059}
@@ -3625,7 +3638,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4368481947140590, guid: f4024ffede71a064c9185c1ed6fa8d3a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.67076236
+      value: 0.779
       objectReference: {fileID: 0}
     - target: {fileID: 4368481947140590, guid: f4024ffede71a064c9185c1ed6fa8d3a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4000,7 +4013,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1377933058}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 325.5, y: 167.5, z: 0}
+  m_LocalPosition: {x: 392, y: 205, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 666451149}

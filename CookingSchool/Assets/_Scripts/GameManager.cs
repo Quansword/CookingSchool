@@ -22,6 +22,12 @@ public class GameManager : MonoBehaviour
     private float invY;
     private bool isStoveOn;
 
+	public Items liquidEgg;
+	public Items undercooked;
+	public Items cooked;
+	public Items overcooked;
+	public PanStuff butterSlice;
+
 	// Use this for initialization
 	void Start()
 	{
@@ -46,10 +52,28 @@ public class GameManager : MonoBehaviour
 					{
 						item = hit.collider.gameObject.GetComponent<Items>();
 						zPos = mainCamera.transform.position.z - item.gameObject.transform.position.z;
+
+						if (item.name == "fry")
+						{
+							zPos = mainCamera.transform.position.z - 0.8f;
+						}
 					}
 
 					if ((int)item.itemLocation == camScript.camLocation || item.itemLocation == Items.Location.Inventory)
 					{
+						if (item.name == "fry")
+						{
+							item.transform.rotation = Quaternion.Euler(0f, -45f, 0f);
+						}
+						else if (item.name == "whisk")
+						{
+							item.transform.rotation = Quaternion.Euler(-5.17f, -1.634f, -162.434f);
+						}
+						else if (item.name == "spat")
+						{
+							item.transform.rotation = Quaternion.Euler(-1.05f, 128.67f, 86.058f);
+						}
+
 						item.interactable = true;
 						item.gameObject.GetComponent<Collider>().enabled = false;
                         if(item.itemLocation == Items.Location.Inventory)
@@ -119,7 +143,18 @@ public class GameManager : MonoBehaviour
 					if (hitContainer.milk == 2 && hitContainer.itemList.Count == 4)
 					{
 						hitContainer.mixed = true;
-						// TODO instantiate liquid egg and clear stuff from container
+						hitContainer.salt = 0;
+						hitContainer.pepper = 0;
+						hitContainer.milk = 0;
+						
+						for (int i = 0; i < 4; i++)
+						{
+							hitContainer.itemList.RemoveAt(0);
+						}
+
+						Items liquid = Instantiate(liquidEgg, hitContainer.transform.position, hitContainer.transform.rotation, hitContainer.gameObject.transform);
+						liquid.itemLocation = (Items.Location)camScript.camLocation;
+						liquid.transform.localScale = new Vector3(0.054f, 0.054f, 0.054f);
 					}
 				}
 				else if (item.itemType == Items.Type.Container && hit.collider.CompareTag("Container"))
@@ -140,6 +175,16 @@ public class GameManager : MonoBehaviour
 						hitContainer.itemList.Add(((Containers)item).itemList[i]);
 						((Containers)item).itemList.RemoveAt(i);
 					}
+
+					if (((Containers)item).mixed)
+					{
+						Destroy(item.gameObject.transform.GetChild(0).gameObject);
+						Items liquid = Instantiate(liquidEgg, hitContainer.transform.position, hitContainer.transform.rotation, hitContainer.gameObject.transform);
+						liquid.itemLocation = (Items.Location)camScript.camLocation;
+						newPos = liquid.transform.localPosition;
+						newPos.y += 0.03f;
+						liquid.transform.localPosition = newPos;
+					}
 				}
 				else if (item.itemType == Items.Type.Tools && hit.collider.CompareTag("Ingredient"))
 				{
@@ -147,7 +192,11 @@ public class GameManager : MonoBehaviour
 
 					if (hitIngredient.name == "butter")
 					{
-						// TODO instantiate butter slice
+						PanStuff butter = Instantiate(butterSlice, hitIngredient.transform.position, hitIngredient.transform.rotation);
+						butter.itemLocation = Items.Location.Cutting;
+						newPos = butter.transform.position;
+						newPos.z += 0.1f;
+						butter.transform.position = newPos;
 					}
 				}
 			}
@@ -173,7 +222,16 @@ public class GameManager : MonoBehaviour
                 item.gameObject.GetComponent<Collider>().enabled = true;
                 holding = false;
                 Debug.Log("Let go of whatever");
-            }
+
+				if (item.name == "whisk")
+				{
+					item.transform.rotation = Quaternion.Euler(0, 0, -90f);
+				}
+				else if (item.name == "spat")
+				{
+					item.transform.rotation = Quaternion.Euler(0, 0, 0);
+				}
+			}
         }
         invY = -0.2f;
         foreach (Items invItem in inventory)
