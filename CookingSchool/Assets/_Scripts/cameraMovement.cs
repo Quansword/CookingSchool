@@ -101,6 +101,20 @@ public class cameraMovement : MonoBehaviour {
             StartCoroutine(moveCoroutine);
             transform.rotation = cameraRotations[camLocation];
         }
+        if(camLocation == 1)
+        {
+            for (int i = 0; i < 150; i+=10)
+            {
+                fridgeDoor.transform.rotation = new Quaternion(0, i, 0, 0);
+            }
+        }
+        else
+        {
+            for (int i = 150; i >= 0; i-=10)
+            {
+                fridgeDoor.transform.rotation = new Quaternion(0, 0, 0, 0);
+            }
+        }
         
     }
 
