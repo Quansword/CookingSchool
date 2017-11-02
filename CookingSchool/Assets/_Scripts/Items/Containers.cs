@@ -4,15 +4,19 @@ using System.Collections.Generic;
 
 public class Containers : Items
 {
-	public bool inUse;
 	public bool mixed;
+	public int salt;
+	public int pepper;
+	public int milk;
 
 	public List<Ingredients> itemList = new List<Ingredients>();
 
 	public Containers()
 	{
-		inUse = false;
 		mixed = false;
+		salt = 0;
+		pepper = 0;
+		milk = 0;
 		Debug.Log("Default Container Constructor Called");
 	}
 
@@ -20,8 +24,10 @@ public class Containers : Items
 	{
 		itemType = iType;
 		itemLocation = iLocation;
-		inUse = false;
 		mixed = false;
+		salt = 0;
+		pepper = 0;
+		milk = 0;
 		Debug.Log("Container Constructor Called");
 	}
 }
