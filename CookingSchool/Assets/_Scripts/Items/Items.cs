@@ -56,13 +56,4 @@ public class Items : MonoBehaviour
 		inUse = false;
 		Debug.Log("Items Constructor Called");
 	}
-
-	public void MoveLocation(Location newLocation)
-	{
-		if (interactable && movable && newLocation != Location.Kitchen)
-		{
-			itemLocation = newLocation;
-			Debug.Log("Item moved to location " + itemLocation + ".");
-		}
-	}
 }

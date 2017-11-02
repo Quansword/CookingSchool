@@ -7,7 +7,7 @@ public class cameraMovement : MonoBehaviour {
     // Use this for initialization
     private IEnumerator moveCoroutine;
 
-    private Vector3[] cameraPositions = new Vector3[8];
+    public Vector3[] cameraPositions = new Vector3[8];
     private Quaternion[] cameraRotations = new Quaternion[8];
     public GameObject fridgeDoor;
 

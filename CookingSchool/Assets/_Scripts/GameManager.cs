@@ -10,18 +10,23 @@ public class GameManager : MonoBehaviour
 	private Items item;
 	private Containers hitContainer;
 	private Ingredients hitIngredient;
+    private List<Items> inventory = new List<Items>();
+    private List<float> zPositions = new List<float>();
 
 	private bool holding;
 
 	private Vector3 mousePos;
+    private Vector3 camPos;
 	private Vector3 newPos;
 	private float zPos;
+    private float invY;
 
 	// Use this for initialization
 	void Start()
 	{
 		holding = false;
 		camScript = mainCamera.GetComponent<cameraMovement>();
+        invY = camScript.cameraPositions[4].y+0.3f;
 	}
 
 	// Update is called once per frame
@@ -45,6 +50,22 @@ public class GameManager : MonoBehaviour
 					{
 						item.interactable = true;
 						item.gameObject.GetComponent<Collider>().enabled = false;
+                        if(item.itemLocation == Items.Location.Inventory)
+                        {
+                            item.itemLocation = (Items.Location)camScript.camLocation;
+                            int i = 0;
+                            foreach (Items thing in inventory)
+                            {
+                                if(thing.name == item.name)
+                                {
+                                    break;
+                                }
+                                i++;
+                            }
+                            inventory.Remove(item);
+                            zPos = zPositions[i];
+                            zPositions.RemoveAt(i);
+                        }
 					}
 
 					if (item.interactable)
@@ -129,18 +150,42 @@ public class GameManager : MonoBehaviour
 				}
 			}
 		}
-		else if (Input.GetMouseButtonDown(1))
+		else if (Input.GetMouseButtonDown(1) && Input.mousePosition.x<Screen.width/10)
 		{
-			if (holding)
+			if (holding && (item.itemType == Items.Type.Container || item.itemType == Items.Type.Ingredients) )
 			{
 				item.interactable = false;
+                item.itemLocation = Items.Location.Inventory;
+                zPositions.Add(zPos);
+                inventory.Add(item);
 				item.gameObject.GetComponent<Collider>().enabled = true;
 				holding = false;
 				Debug.Log("Let go of whatever");
 			}
 		}
+        else if (Input.GetMouseButtonDown(1))
+        {
+            if (holding)
+            {
+                item.interactable = false;
+                item.gameObject.GetComponent<Collider>().enabled = true;
+                holding = false;
+                Debug.Log("Let go of whatever");
+            }
+        }
+        invY = -0.2f;
+        foreach (Items invItem in inventory)
+        {
+            camPos = mainCamera.transform.position;
+            camPos.z -= 1;
+            camPos.x += 0.6f;
+            camPos.y += invY + 0.3f;
+            invItem.gameObject.transform.position = camPos;
+            invY -= 0.2f;
+           
+        }
 
-		if (holding)
+        if (holding)
 		{
 			if (item.movable)
 			{
